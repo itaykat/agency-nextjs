@@ -14,6 +14,7 @@ pageLayoutKey: layout
 logicFields:
   - portfolio_section.projects_number
   - posts_section.posts_number
+nodeVersion: 12
 models:
   config:
     type: data
@@ -177,6 +178,7 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+        label: Seo
   blog:
     type: page
     urlPath: /blog
@@ -212,6 +214,7 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+        label: Seo
   portfolio:
     type: page
     urlPath: /portfolio
@@ -246,6 +249,7 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+        label: Seo
   page:
     type: page
     label: Page
@@ -275,6 +279,7 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+        label: Seo
   post:
     type: page
     urlPath: '/blog/{slug}'
@@ -319,6 +324,7 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+        label: Seo
   project:
     type: page
     urlPath: '/portfolio/{slug}'
@@ -361,6 +367,7 @@ models:
         name: seo
         models:
           - stackbit_page_meta
+        label: Seo
   section:
     type: object
     label: Section
@@ -377,9 +384,15 @@ models:
   hero_section:
     type: object
     label: Hero Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: markdown
         name: content
         label: Content
@@ -391,12 +404,19 @@ models:
           type: model
           models:
             - action
+    labelField: title
   content_section:
     type: object
     label: Content Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -413,12 +433,19 @@ models:
         name: content
         label: Content
         description: The text content of the section
+    labelField: title
   cta_section:
     type: object
     label: CTA Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: markdown
         name: content
         label: Content
@@ -447,12 +474,19 @@ models:
           - light
         default: none
         required: true
+    labelField: title
   grid_section:
     type: object
     label: Grid Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -473,6 +507,7 @@ models:
           type: model
           models:
             - grid_item
+    labelField: title
   grid_item:
     type: object
     label: Grid item
@@ -508,9 +543,15 @@ models:
   portfolio_section:
     type: object
     label: Portfolio Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -536,12 +577,19 @@ models:
         name: view_all_url
         label: All projects button URL
         default: '#'
+    labelField: title
   posts_section:
     type: object
     label: Posts Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -567,12 +615,19 @@ models:
           type: model
           models:
             - action
+    labelField: title
   testimonials_section:
     type: object
     label: Testimonials Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -584,6 +639,7 @@ models:
           type: model
           models:
             - testimonial
+    labelField: title
   testimonial:
     type: object
     label: Testimonial
@@ -615,9 +671,15 @@ models:
   form_section:
     type: object
     label: Form Section
-    extends:
-      - section
     fields:
+      - type: string
+        name: section_id
+        label: ID
+        description: 'A unique identifier of the section, must not contain whitespace'
+      - type: string
+        name: title
+        label: Title
+        description: The title of the section
       - type: string
         name: subtitle
         label: Subtitle
@@ -652,6 +714,7 @@ models:
         name: submit_label
         label: Submit button label
         required: true
+    labelField: title
   form_field:
     type: object
     label: Form field
@@ -689,6 +752,8 @@ models:
         name: options
         label: Options
         description: A list of options for select field
+        items:
+          type: string
       - type: boolean
         name: is_required
         label: Make the field required
@@ -814,11 +879,15 @@ models:
             - type: string
               name: name
               default: ''
+              label: Name
             - type: string
               name: value
               default: ''
+              label: Value
             - type: string
               name: keyName
               default: name
+              label: Key Name
             - type: boolean
               name: relativeUrl
+              label: Relative Url
