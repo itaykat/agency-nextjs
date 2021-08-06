@@ -96,3 +96,5 @@ out
 .sourcebit-nextjs-cache.json
 .DS_Store
 .idea
+.pytest_cache/v/cache/nodeids
+.vscode/simple-explorer.json

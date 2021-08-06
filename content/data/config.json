@@ -2,7 +2,7 @@
     "title": "Stackbit Agency Theme",
     "path_prefix": "/",
     "color_scheme": "light",
-    "accent_color": "green",
+    "accent_color": "red",
     "base_font": "fraunces",
     "header": {
         "title": "悟墨 | Satoru Ink",
@@ -11,29 +11,19 @@
         "has_nav": true,
         "nav_links": [
             {
-                "label": "Home",
+                "label": "Now",
                 "url": "/",
                 "style": "link"
             },
             {
-                "label": "Work",
+                "label": "Watch",
                 "url": "/portfolio/",
                 "style": "link"
             },
             {
-                "label": "Journal",
+                "label": "Read",
                 "url": "/blog/",
                 "style": "link"
-            },
-            {
-                "label": "About",
-                "url": "/about/",
-                "style": "link"
-            },
-            {
-                "label": "Contact",
-                "url": "/contact/",
-                "style": "button"
             }
         ]
     },
