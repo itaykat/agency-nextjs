@@ -19,11 +19,6 @@
                 "label": "Work",
                 "url": "/portfolio/",
                 "style": "link"
-            },
-            {
-                "label": "Contact",
-                "url": "/contact/",
-                "style": "button"
             }
         ]
     },
